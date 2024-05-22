@@ -1,0 +1,44 @@
+/* AddThread.css */
+.add-thread-container {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid #ccc; /* Add border */
+  padding: 20px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 3px 8px 11px -3px rgba(34, 34, 34, 0.31);
+ 
+}
+  
+.usernamelogged{
+  margin: 10px;
+  color: black;
+  font-size: 18px;
+}
+.selected-image{
+  width:99%;
+  height:auto;
+}
+.input-field {
+  width: 90%;
+  height: 50px;
+  margin: 10px;
+  padding-right: 10px;
+  padding: 5px;
+  border-color: #ccc;
+  resize: none;
+  border-radius: 10px;
+}
+  
+.submit-button {
+  width: 30%;
+  background-color: grey;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 16px;
+}
+

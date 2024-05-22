@@ -1,0 +1,45 @@
+.mainhome{
+    height: 100%;
+    width: 100%;
+}
+.home{
+    display:flex;
+}
+
+.info{
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding:0;
+  border-bottom: 1px solid #ccc;
+}
+.guidance {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: -90px; /* Adjust as needed */
+    z-index: 1; /* Ensure it's above other content */
+    display: flex;
+    position:fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    margin-top: 51px;
+    transform: translate(-50%, 0);
+    background-color: white;
+  }
+  
+
+.homeContainer{
+    flex: 6;
+}
+
+.cards{
+    display: flex; 
+    flex-wrap: wrap; 
+}
+

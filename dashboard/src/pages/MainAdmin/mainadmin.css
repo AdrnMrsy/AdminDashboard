@@ -1,0 +1,18 @@
+.mainadmin{
+    height: 100%;
+    width: 100%;
+    background: rgb(243, 243, 243);
+    display:flex;
+}
+.admin{
+    flex:10;
+    display:grid;
+    padding :20px;
+}
+.cards{
+    
+    display: flex; 
+    flex-wrap: wrap; 
+    margin: 20px
+    
+}

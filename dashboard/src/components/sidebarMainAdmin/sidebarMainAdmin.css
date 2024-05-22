@@ -1,0 +1,60 @@
+.sidebar {
+    position:static;
+    flex:1;
+    padding-top: 51px;
+    left: 0;
+    height: 120vh;
+    width: 250px; /* Adjust width as needed */
+    background: #8a344c;
+    padding-right: 30px;
+    z-index: 1000; /* Ensure it's above other content */
+    transition-duration: 0.5s;
+    
+  }
+  
+  .center {
+    padding-left: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .titleadmin {
+    font-size: 10px;
+    font-weight: bold;
+    color: #999;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+
+  
+  .iconic {
+    font-size: 18px;
+    color: rgb(214, 214, 214);
+  }
+  
+  .nav {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(214, 214, 214);
+    margin-left: 10px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+  
+    color: rgb(214, 214, 214);
+
+  }
+  

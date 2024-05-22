@@ -1,0 +1,24 @@
+/* NotificationComponent.css */
+
+.notification-container {
+    width: 44%;
+    border: none;
+    border-radius:5px;
+    margin-left: 25px;
+    background-color: #f9f8f6;
+    padding:15px
+  }
+  .notification-container .MuiListItem-root:hover {
+    background-color: white !important; /* Override any hover background color */
+    /* Remove any hover box shadow */
+  }
+  
+  .notification-container .schedule-list {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default list padding */
+  }
+  
+  .schedule-item {
+    text-align: left; /* Align list items to the left */
+  }
+  
