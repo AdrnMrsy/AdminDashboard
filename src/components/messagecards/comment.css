@@ -1,0 +1,36 @@
+.comment-form {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center align items vertically */
+  }
+  
+  .comment-input {
+    flex: 1; /* Allow the input to grow and take remaining space */
+    margin-right: 5px;
+    margin-bottom: 10px;
+
+    margin-left: 10px; /* Add some space between input and button */
+    padding: 8px; /* Adjust padding as needed */
+    width: 470px;
+    border-radius: 20px;
+    border:2px solid #dfdddd;
+    background-color: transparent;
+  }
+  
+  .comment-button {
+  transform: translateX(-150%);
+  padding-bottom: 10px;
+  font-size: 5px;
+  background-color: transparent;
+  color: black;
+  border: none; /* Remove default button border */
+   /* Add padding to the like button */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Add cursor pointer on hover */
+  
+  }
+  .commentinput{
+    
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; 
+  }
+  

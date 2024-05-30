@@ -1,0 +1,119 @@
+/* Threads.css */
+
+.listcomments{
+  display:grid;
+}
+
+.listcomments:hover {
+  background-color: transparent !important; /* Change background color on hover */
+  /* Add any other styles you want to override on hover */
+}
+
+.threads-container {
+  width: 540px;
+  border-radius: 5px;
+  margin: 10px auto;
+
+ /* Add padding for better appearance */
+  background: White;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;  
+}
+.imagecontent{
+  max-height:650px;
+  height:auto;
+  width:100%;
+  object-fit: cover;
+}
+
+/* .image-container {
+  max-height: 550px; 
+  overflow-y: auto; 
+  width: 100%;
+}
+
+.imagecontent {
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+} */
+.reply {
+  margin-left: 20px; /* Adjust the value as needed */
+}
+hr{
+  color:#e6e5e5c9;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-weight: 10;}
+.icons {
+  background-color: transparent;
+  color: rgb(78, 77, 77);
+  border: none; /* Remove default button border */
+  padding: 5px 10px; /* Add padding to the like button */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  cursor: pointer; /* Add cursor pointer on hover */
+   /* Add margin top for spacing */
+  margin-right: 10px;
+  margin-left: 16px;
+}
+.contentmessage{
+  padding-left: 10px;
+  margin-left: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+
+.datetime{
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+.profilemessages{
+   
+    border-radius: 100%; 
+  object-fit: cover; 
+  }
+
+  .profilemessages img{
+    width: 50px; /* Adjust the width as needed */
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover; 
+
+  }
+
+/* Add this CSS to your existing styles or CSS file */
+
+.modalmain{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; 
+}
+.modalmessage {
+  width: 80%;
+  height: 600px;
+  background-color: black; /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalmessage-content {
+  max-width: 100%;
+  max-height: 600px;
+}
+
+.modalmessage-content img {
+  width: 100%;
+  height: 600px;
+  object-fit: contain; /* Ensure the image fits inside the modal */
+  background-color: black;
+}

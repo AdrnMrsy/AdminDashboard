@@ -1,0 +1,81 @@
+.navbar{
+    height:50px;
+    border-bottom: 0.5px solid rgb(230,227,227);
+    display: flex;
+    flex:2;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+
+
+.logo{
+    font-size: 20px;
+    font-weight: bold;
+    color:rgb(45, 45, 92);
+}
+.wrapper{
+    width:100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+input{
+    border: 0.5px solid rgb(71, 70, 70);
+    outline: none;
+    background-color: transparent;
+}
+
+input::placeholder{
+    font-size: 13px;
+}
+
+.items{
+    display:flex;
+    justify-content:flex-end;
+    margin-left: auto;
+    width:100%
+}
+
+.item{
+    margin-left:20px;
+    position: relative;
+}
+
+.iconmui{
+    font-size: 20px;
+}
+
+.avatar{
+    font-size: medium;
+}
+.buttonmenu{
+    width: inherit;
+    border: none;
+    background-color: transparent;
+    color: rgb(58, 56, 56);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.counter{
+    width:10px;
+    height:10px;
+    background-color: red;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+

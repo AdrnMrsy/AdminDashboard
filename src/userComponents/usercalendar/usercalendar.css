@@ -1,0 +1,62 @@
+:root {
+    --fc-small-font-size: .85em;
+    --fc-page-bg-color: #fff;
+    --fc-neutral-bg-color: white;
+    --fc-neutral-text-color: grey;
+    --fc-border-color: #ddd;
+    --fc-button-text-color: #fff;
+    --fc-button-bg-color: #8a344c;
+    --fc-button-border-color: #8a344c;
+    --fc-button-hover-bg-color: #8a344c;
+    --fc-button-hover-border-color: #8a344c;
+    --fc-button-active-bg-color: #8a344c;
+    --fc-button-active-border-color: #8a344c;
+    --fc-event-bg-color:  #b46279;
+    --fc-event-border-color:  #b46279;
+    --fc-event-text-color: #fff;
+    --fc-event-selected-overlay-color: rgba(0, 0, 0, .25);
+    --fc-more-link-bg-color: #d0d0d0;
+    --fc-more-link-text-color: inherit;
+    --fc-event-resizer-thickness: 8px;
+    --fc-event-resizer-dot-total-width: 8px;
+    --fc-event-resizer-dot-border-width: 1px;
+    --fc-non-business-color: hsla(0, 0%, 84%, .3);
+    --fc-bg-event-color: #8fdf82;
+    --fc-bg-event-opacity: 0.3;
+    --fc-highlight-color: rgba(188, 232, 241, .3);
+    --fc-today-bg-color: rgba(255, 220, 40, .15);
+    --fc-now-indicator-color: red;
+}
+
+
+.schedule-list {
+    width: 100%; /* Adjust width as needed */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .schedule-item {
+    background-color: white;
+    border-radius: 5px; /* Border radius */
+    margin-bottom: 10px; /* Add spacing between items */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+  
+  .schedule-text {
+    padding: 10px; /* Add padding to text */
+  }
+  .schedule-item:hover {
+    background-color: transparent !important;
+  }
+  .alert{
+    position: fixed;
+    color:black;
+    z-index: 100; 
+    transform: translateX(200px) translateY(-50px);
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  padding: 20px;
+  border:#d0d0d0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+
+ }

@@ -1,0 +1,84 @@
+.testimonial.padding {
+    padding: 100px 0;
+}
+
+.items.shadow {
+    box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+
+}
+
+.box.flex {
+    display: flex;
+}
+
+.testimonial .items {
+    padding: 30px;
+    transition: 0.5s;
+    background-color: #f8f8f8;
+}
+
+.testimonial .img {
+    position: relative;
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.testimonial i {
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+    background-color: #1eb2a6;
+    color: #fff;
+}
+
+.testimonial .name {
+    margin: 25px;
+}
+
+.testimonial .name h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.testimonial .name span {
+    color: #1eb2a6;
+}
+
+.testimonial p {
+    margin-top: 20px;
+    color: grey;
+    transition: 0.5s;
+}
+
+.testimonial .items:hover {
+    background-color: #1eb2a6;
+    color: #fff;
+    cursor: pointer;
+}
+
+.testimonial .items:hover span,
+.testimonial .items:hover p {
+    color: #fff;
+}
+
+.testimonial .items:hover i {
+    background-color: #fff;
+    color: #1eb2a6;
+}
+
+.content.grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}

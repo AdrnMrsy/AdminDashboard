@@ -1,0 +1,603 @@
+
+
+:root {
+  --pink: #8a344c;
+  --white: #F9F8F6;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --pink2: #b46279;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== navbar ================ */
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--pink);
+  transition: 0.5s;
+  overflow: hidden;
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+ 
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  height:70px;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white);
+}
+
+
+
+.linking {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+ .navigation ul li:hover .linking,
+.navigation ul li.hovered .linking {
+  color: var(--pink);
+} 
+
+.navigation ul li .linking .icon {
+  position: relative;
+  display: block;
+  min-width: 70px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+  color: var(--white);
+}
+.navigation ul li .linking .icon ion-icon {
+  font-size: 1.75rem;
+}
+
+.navigation ul li .linking .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 65px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight:normal;
+  color: var(--white);
+}
+.navigation ul li .linking .icon,
+.navigation ul li .linking .title {
+  transition: color 0.3s; /* Add transition for smooth color change */
+}
+
+.navigation ul li .linking:hover .icon,
+.navigation ul li .linking:hover .title,
+.navigation ul li.hovered .linking .icon,
+.navigation ul li.hovered .linking .title {
+  color: var(--pink); /* Change color to pink on hover or when hovered */
+}
+.navigation ul li:nth-child(1) .linking:hover .icon,
+.navigation ul li:nth-child(1) .linking:hover .title {
+  color: white; /* or any other default color value */
+}
+/* Remove effects for specific nth-child element */
+.navigation ul li:nth-child(1) .linking::before,
+.navigation ul li:nth-child(1) .linking::after {
+  display: none;
+}
+/* Remove hover effects for specific nth-child element */
+.navigation ul li:nth-child(1):hover,
+.navigation ul li:nth-child(1).hovered {
+  background-color: transparent; /* or any other default background color */
+}
+
+.navigation ul li:nth-child(1):hover .linking,
+.navigation ul li:nth-child(1).hovered .linking {
+  color: white; /* or any other default color value */
+}
+
+
+/* --------- hover, kulay ---------- */
+/* .navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+} */
+/* .navigation ul li:hover .linking::before,
+.navigation ul li.hovered .linking::before {
+  content: "";
+  position: absolute;
+  right: 5.5px;
+  top: -58px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover .linking::after,
+.navigation ul li.hovered .linking::after {
+  content: "";
+  position: absolute;
+  right: 5.5px;
+  bottom: -58px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+} */
+
+/* ===================== Main ===================== */
+.main {
+  height: auto;
+  width: 100%;
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+  height:auto;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--pink2);
+}
+
+.search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ======================= Cards ====================== */
+.cardodalisay {
+  overflow-x: auto;
+  }
+  
+
+
+.cardScrollWrapper {
+  display: flex; /* Ensure the cards are displayed in a row */
+  width:700px;
+  scroll-snap-type: x mandatory; 
+  scroll-behavior: smooth; 
+  
+}
+
+/* .cardBoxS::-webkit-scrollbar {
+  display: none; 
+} */
+
+.cardBox {
+  position: relative;
+  width: 360%;
+  height: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.logoutbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  width:70%;
+}
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 3.5rem;
+  color: var(--pink);
+}
+
+.cardBox .card .cardName {
+  color: var(--pink2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 4.5rem;
+  color: var(--pink2);
+}
+
+/* .cardBox .card:hover {
+  background: var(--pink);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+} */
+
+
+
+.cardBoxS {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  
+}
+
+.cardBoxS .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  width: 313px;
+}
+
+.cardBoxS .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.0rem;
+  color: var(--pink);
+}
+
+.cardBoxS .card .cardName {
+  color: var(--pink2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+.cardBoxS .card .cardName2 {
+    color: var(--pink2);
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+  
+  .cardBoxS .card .cardName3 {
+    color: var(--pink2);
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+  
+.cardBoxS .card .iconBx {
+  font-size: 5.0rem;
+  color: var(--pink2);
+}
+
+/* .cardBoxS .card:hover {
+  background: var(--pink);
+}
+.cardBoxS .card:hover .numbers,
+.cardBoxS .card:hover .cardName,
+.cardBoxS .card:hover .iconBx {
+  color: var(--white);
+} */
+.cardBox .card .UserCalendarContainer {
+  width: 100%; /* For larger screens */
+}
+
+.cardBoxS .card .UserCalendarContainer {
+  width: 100%; /* For smaller screens */
+}
+
+
+/* ============ Modal ============ */
+.modal {
+display: none; 
+position: fixed;
+z-index: 1; 
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto; 
+background-color: rgb(0,0,0);  
+background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* communitytab */
+.close-btn {
+  position: fixed;
+  top: 20px; /* Adjust top position as needed */
+  right: 20px; /* Adjust right position as needed */
+  cursor: pointer;
+  z-index: 9999; /* Ensure it appears above other content */
+  background-color: #fff; /* Background color of the button */
+  border: 1px solid #ccc; /* Border of the button */
+  border-radius: 50%; /* Make it circular */
+  padding: 5px; /* Add padding to increase clickable area */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.close-btn ion-icon {
+  font-size: 20px; /* Adjust icon size as needed */
+  color: #333; /* Icon color */
+}
+/* 
+inspotab */
+
+.quote{
+  font-size: 2rem;
+margin-top: 10px;
+color:#8a344c;
+}
+/* .card:hover .quote{
+color: var(--white);
+} */
+
+
+/* settings */
+/* Create a new CSS file or modify existing infotab.css */
+
+/* Update the CSS file */
+
+.logoutcontainer {
+  position: absolute;
+  padding: 40px
+}
+
+.logoutbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.logoutbtn:hover {
+  background-color: #f0f0f0;
+}
+
+.logoutbtn span {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.logoutbtn svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+}
+
+
+.modaluser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  z-index: 1000;
+}
+
+.modaluser-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.modaluser-content img{
+  width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.scrollable-container {
+  padding:30px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  background-color: #8a344c;
+}
+.pic {
+  position: relative;
+  width: 140px; 
+  height: 140px; 
+  border-radius: 100%; 
+  object-fit: cover; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+
+  .profileicon{
+    font-size: 150px;
+  }
+
+  .passwordModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+  
+  .passwordModal-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .passwordModal-content input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .passwordModal-content button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .passwordModal-content .saveButton {
+    background-color: #4CAF50;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .passwordModal-content .cancelButton {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .passwordModal-content .error-message, .success-message {
+    color: #f44336;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .success-message {
+    color: #4CAF50;
+  }
+  

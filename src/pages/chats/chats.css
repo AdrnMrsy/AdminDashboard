@@ -1,0 +1,26 @@
+.basecontainer{
+    padding-top: 51px;
+    
+}
+ .create-message{
+    display: flex; /* Use flexbox for layout */
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .create-button{
+    background-color: #BA5255;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+  }
+  .message{
+    margin: 10px;
+    padding: 20px; /* Add padding for better appearance */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the content horizontally */
+    color: white;
+    background: #2c3e50;
+      
+    border-radius: 5px;
+  }

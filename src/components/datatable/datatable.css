@@ -1,0 +1,126 @@
+.datatable {
+    height: 600px;
+    width: 100%;
+    margin: 20px;
+  zoom:90%;
+}
+.datatabletable {
+  height: 500px;
+  width: 1200px;
+
+}
+  .dropdownmenu select::selection {
+    background-color: #ffffff; /* Red background color for selection */
+    color: #ffffff; /* White text color for selection */
+}
+  .dropdownmenu select {
+    font-size: 16px; /* Change the font size */
+    padding: 8px; /* Change the padding */
+    width: 150px; /* Change the width */
+    margin-right: 10px; /* Add margin to the right */
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    border-radius: 5px;
+
+}
+
+.filterdate{
+  margin:10px
+}
+.fildate{
+  margin-right:5px;
+  border-radius: 5px;
+  color:rgb(45, 45, 92);
+}
+.datatableTitle {
+  padding-top: 51px;
+  justify-content: space-between; /* Align items to the start and end of the container */
+  align-items: center; /* Center items vertically */
+}
+/* .link {
+  text-decoration: none;
+  color: green;
+  font-size: 16px;
+  font-weight: 400;
+  border: 1px solid green;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+.link{
+    margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.link:hover {
+  background-color: rgb(148, 146, 146);
+}
+  .buttonnewimport{
+    margin-right: 70px;
+  }
+  .cellWithImg {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cellWithImg .cellImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .cellWithStatus {
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .cellWithStatus.active {
+    background-color: rgba(0, 128, 0, 0.05);
+    color: green;
+  }
+  
+  .cellWithStatus.pending {
+    background-color: rgba(255, 217, 0, 0.05);
+    color: goldenrod;
+  }
+  
+  .cellWithStatus.passive {
+    background-color: rgba(255, 0, 0, 0.05);
+    color: crimson;
+  }
+  
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .cellAction .viewButton {
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: darkblue;
+    border: 1px dotted rgba(0, 0, 139, 0.596);
+    cursor: pointer;
+  }
+  
+  .cellAction .deleteButton {
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: crimson;
+    border: 1px dotted rgba(220, 20, 60, 0.6);
+    cursor: pointer;
+  }
+  
