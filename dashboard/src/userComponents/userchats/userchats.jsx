@@ -51,7 +51,7 @@ const UserChats = () => {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         {isAddingThread && <AddThread onAddThread={addThread} />}
 
-        <div style={{borderRadius:"10px",backgroundColor:"#BA5255",color:"white", paddingLeft:"155px",paddingRight:"155px",paddingTop:"10px",paddingBottom:"5px"}} ><h2>Feautured Question</h2></div>
+        <div style={{borderRadius:"10px",backgroundColor:"#BA5255",color:"white", paddingLeft:"155px",paddingRight:"155px",paddingTop:"10px",paddingBottom:"5px"}} ><h2>Featured Question</h2></div>
         <Threads2 threads={threads} onLike={handleLike} onAddComment={handleAddComment} />
         <div onClick={toggleModal} style={{ cursor: 'pointer',paddingBottom:"10px" }}>see more...</div>
 
@@ -87,7 +87,7 @@ const UserChats = () => {
   position: 'relative',
   zIndex: 1001,
 }} onClick={stopPropagation}>
-          <div style={{borderRadius:"10px",backgroundColor:"#BA5255",color:"white", paddingLeft:"180px",paddingTop:"10px",paddingBottom:"5px"}} ><h2>Feautured Questions</h2></div>
+          <div style={{borderRadius:"10px",backgroundColor:"#BA5255",color:"white", paddingLeft:"180px",paddingTop:"10px",paddingBottom:"5px"}} ><h2>Featured Questions</h2></div>
 
             <button style={{
   position: 'absolute',

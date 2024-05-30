@@ -252,10 +252,7 @@ function InfotabAdmin() {
               <div>
                 <div className="numbers">{cardData?.title1}</div>
                 <div className="cardName">{cardData?.info1}</div>
-                <button className="title_button" id="title_button" onClick={openModal}>
-                            <div className="button-icon"><ion-icon name="heart"></ion-icon></div>
-                            Learn more about Ga-Bai
-                        </button>
+               
               </div>
             )}
             <div className="gabai_pic">
@@ -319,9 +316,16 @@ function InfotabAdmin() {
               <div>
                 <div className="numbers">{cardData?.title3}</div>
                 <div className="cardName">{cardData?.info3}</div>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dyci.gc@dyci.edu.ph">
+      <button className="title_button" id="title_button">
+        <div className="button-icon" ><ion-icon name="heart"></ion-icon></div>
+        Contact Us
+      </button>
+    </a>
               </div>
             )}
-            
+           
+    
           </div>
         </div>
 
@@ -337,12 +341,12 @@ function InfotabAdmin() {
       <div className="cardName">{counselor.info1}</div>
       <div className="cardName">{counselor.info2}</div>
       <div className="cardName">{counselor.info3}</div>
-      <a href={counselor.link}>
+      {/* <a href={counselor.link}>
                             <button className="title_button" id="title_button">
                             <div className="button-icon"><ion-icon name="heart"></ion-icon></div>
                                 Social Link 
                             </button>
-                        </a>
+                        </a> */}
       {/* Add additional counselor information as needed */}
     </div>
     <div className="iconBx">
