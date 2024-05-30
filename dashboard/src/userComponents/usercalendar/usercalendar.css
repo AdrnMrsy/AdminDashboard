@@ -47,3 +47,16 @@
   .schedule-item:hover {
     background-color: transparent !important;
   }
+  .alert{
+    position: fixed;
+    color:black;
+    z-index: 100; 
+    transform: translateX(200px) translateY(-50px);
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  padding: 20px;
+  border:#d0d0d0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+
+ }

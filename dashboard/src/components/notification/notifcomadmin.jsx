@@ -196,7 +196,7 @@ const NotificationComponentAdmin = () => {
         </AccordionDetails>
       </Accordion>
       <Modal open={openModal} onClose={handleCloseModal}>
-        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', bgcolor: 'background.paper', boxShadow: 24, p: 4, width: 800, height: 500 }}>
+        <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', bgcolor: 'background.paper', boxShadow: 24, p: 4, width: 800, height: 500, overflow: "auto" }}>
           <Threads4 messageID={selectedThread} />
         </Box>
       </Modal>

@@ -187,10 +187,10 @@ const NotificationComponent = () => {
                 }
               />
             {selectedState === 'pending' && (
-              <>
+              <div style={{display:"grid",justifyContent:"end"}}>
                 <Button onClick={() => handleUpdateState(schedule.id, 'approved')}>Approve</Button>
-                <Button onClick={() => handleUpdateState(schedule.id, 'reject')}>Reject</Button>
-              </>
+                <Button onClick={() => handleUpdateState(schedule.id, 'reject')}>Reschedule</Button>
+              </div>
             )}
           </ListItem>
         ))}
