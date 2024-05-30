@@ -465,6 +465,15 @@ const filterEventsByOption = () => {
     }
   };
 
+
+  const [alertMessage, setAlertMessage] = useState('');
+
+  const showAlert = (message) => {
+    setAlertMessage(message);
+    setTimeout(() => {
+      setAlertMessage('');
+    }, 3000); // Hide the alert after 3 seconds
+  };
   return (
     <div>
       
@@ -475,6 +484,8 @@ const filterEventsByOption = () => {
 
             {/* CALENDAR */}
             <Box flex="1 1 100%" padding="35px">
+            {alertMessage && <div className="alert">{alertMessage}</div>}
+
               <FullCalendar
                 height="75vh"
                 ref={calendarRef}
@@ -503,7 +514,29 @@ const filterEventsByOption = () => {
                 events={allEvents} // Set the combined events here
                 initialEvents={allEvents}
                 allDaySlot={false}
-                
+                selectAllow={(selectInfo) => {
+                  const startHour = selectInfo.start.getHours();
+                  const endHour = selectInfo.end.getHours();
+                  const startDay = selectInfo.start.getDay();
+                  
+                  // Disable selection on Saturdays (6) and Sundays (0)
+                  if (startDay === 0 || startDay === 6) {
+                    showAlert('Cannot schedule events on weekends.');
+
+                    return false;
+                  }
+            
+                  // Allow selection only between 7:15 AM and 5:00 PM
+                  if (
+                    (startHour > 8 || startHour === 8 ) &&
+                    endHour < 17
+                  ) {
+                    return true;
+                  }
+                  showAlert('Cannot schedule events outside of 8:00 AM to 5:00 PM.');
+
+                  return false;
+                }}
               />
             </Box>
           </Box>

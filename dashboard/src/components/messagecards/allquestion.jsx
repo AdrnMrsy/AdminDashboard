@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import AddCommentForm from '../messagecards/comment';
+import AddCommentForm from './comment';
 import { auth, db } from '../../firebase';
-import { arrayUnion, collection, doc, getDoc, getDocs,where, limit, onSnapshot, orderBy, query, updateDoc } from 'firebase/firestore';
-import '../messagecards/messagecards.css';
+import { arrayUnion, collection, doc, getDoc, getDocs, limit, onSnapshot, orderBy, query, updateDoc } from 'firebase/firestore';
+import './messagecards.css';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ReportOptions from './reportoption';
-import UserAvatar from '../messagecards/useravatar';
+import ThreadOptions from './threadoption';
+import UserAvatar from './useravatar'; // Import the UserAvatar component
 import { v4 as uuidv4 } from 'uuid'; // Import UUID library
 
 
-const Threads4 = ({ messageID }) => {
+const AllQ = ({ onLike, onAddComment }) => {
   // const [img, setImg] = useState([]);
   const [userRole, setUserRole] = useState(''); // Initialize userRole with appropriate initial value
   const [studentNum, setstudentNum] = useState(''); // Initialize userRole with appropriate initial value
@@ -18,7 +18,6 @@ const Threads4 = ({ messageID }) => {
  const [username, setUsername] = useState('');
  const [selectedImage, setSelectedImage] = useState(null);
  const [isModalOpen, setIsModalOpen] = useState(false);
- console.log(messageID)
 
  
 
@@ -44,7 +43,6 @@ const Threads4 = ({ messageID }) => {
         setstudentNum(studentNum);
         setUserRole(role);
         setUsername(username);
-        
       } else {
         console.log('User document does not exist.');
       }
@@ -55,47 +53,31 @@ const Threads4 = ({ messageID }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-        try {
-            // Fetch the message with the provided messageID
-            const messageDoc = await getDoc(doc(db, 'threads', messageID));
-            if (messageDoc.exists()) {
-                console.log("Message document found:", messageDoc.data());
-
-                // Set the initial thread from the fetch
-                setThreads([{ id: messageDoc.id, ...messageDoc.data() }]);
-            } else {
-                console.log('Message document does not exist.');
-            }
-        } catch (error) {
-            console.error('Error fetching message:', error);
-        }
+      let threadList = [];
+    
+      try {
+        const querySnapshot = await getDocs(collection(db, 'questions'), orderBy('createdAt', 'desc'), limit(3));
+        querySnapshot.forEach((doc) => {
+          threadList.push({ id: doc.id, ...doc.data(), isCommentFormVisible: false });
+        });
+        setThreads(threadList);
+            } catch (error) {
+        console.error('Error fetching threads:', error);
+      }
     };
 
     fetchData();
 
-    // Set up real-time listeners for both collections
+    const unsubscribe = onSnapshot(query(collection(db, 'questions'), orderBy('createdAt', 'desc')), (snapshot) => {
+  const threadsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data(), isCommentFormVisible: false }));
+  setThreads(threadsData); 
+});
 
-    const unsubscribeThreads = onSnapshot(
-        query(collection(db, `threads/${messageID}/threads`)),
-        (snapshot) => {
-            const threadsData1 = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data(), isCommentFormVisible: false }));
-            // Check if there are existing threads and show only one
-            if (threadsData1.length > 0) {
-                setThreads([threadsData1[0]]);
-            }
-        }
-    );
 
-    // Clean up the listeners on component unmount
-    return () => {
-        //unsubscribeQuestions();
-        unsubscribeThreads();
-    };
-}, [messageID]);
+    return () => unsubscribe();
 
-  
-  
-  
+    
+  }, []);
 
   const handleLike = async (index) => {
     try {
@@ -195,22 +177,19 @@ const Threads4 = ({ messageID }) => {
     setIsModalOpen(false);
   };
   return (
-    <div> <div style={{display:"grid",justifyContent:"center"}}><h1>Messages</h1>
-
-
+    <div>
        {threads.map((thread, index) => (
         <div key={index} className='threads-container'>
           <div className='threads'>
-            
           <div style={{ padding:"15px",display: 'flex', alignItems: 'center' }}>
-          <UserAvatar username={thread.trueusername} />     
+          <UserAvatar username={thread.username} />     
           <div style={{ display: 'flex', width: '500px', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-           <h3 className='username' style={{ margin: '5px',fontSize:"18px"}}>{thread.trueusername}</h3>
+           <h3 className='username' style={{ margin: '5px',fontSize:"18px"}}>{thread.username}</h3>
            <p className='datetime' style={{ margin: '5px'}}>{thread.createdAt && thread.createdAt.seconds && new Date(thread.createdAt.seconds * 1000).toLocaleString()}</p>
            </div>
 
-           <ReportOptions thread={thread} threadId={thread.id} userRole={userRole} currentUsername={studentNum} />
+           <ThreadOptions thread={thread} threadId={thread.id} userRole={userRole} currentUsername={studentNum} />
             </div>
           </div>
 
@@ -253,10 +232,7 @@ const Threads4 = ({ messageID }) => {
             </ul>
           </div>
         </div>
-        
       ))}
-        </div>
-
       {isModalOpen && (
         <div  className="modalmain"onClick={closeModal}>
           <div className="modalmessage">
@@ -267,8 +243,7 @@ const Threads4 = ({ messageID }) => {
         </div>
       )}
     </div>
-    
   );
 };
 
-export default Threads4;
+export default AllQ;

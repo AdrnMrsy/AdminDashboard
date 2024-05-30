@@ -651,7 +651,7 @@ sx={{
  <div style={{display:"flex"}}>
       <TextField
         label="Student Name"
-        value={""}
+        value={username}
         onChange={(e) => setUsername(e.target.value)}
         fullWidth
         margin="normal"
