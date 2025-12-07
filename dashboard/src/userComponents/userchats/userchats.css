@@ -14,7 +14,108 @@
     font-size: 15px;
     border: none;
     border-radius: 5px;
+    width: 524px;
   }
   
-  /* .card:hover .user-chats{
-    color: var(--white); } */
+
+    /* Modal overlay and content (responsive) */
+.uc-modal-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px; /* keep space on very small screens */
+}
+
+/* Content box */
+.uc-modal-content {
+  background-color: #fff;
+  width: 80%;            /* default for desktop: 80% of viewport */
+  max-width: 600px;      /* don't grow beyond this */
+  max-height: 80vh;      /* prevent taller than viewport */
+  overflow: auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1001;
+  box-sizing: border-box;
+}
+
+/* Header inside modal */
+.uc-modal-header {
+  border-radius: 10px;
+  background-color: #BA5255;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Close button */
+.uc-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #BA5255;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+  .uc-modal-content {
+    width: 88%;
+    max-width: 520px;
+    padding: 32px;
+    max-height: 82vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .input-field{
+    width: 90%;
+  }
+  .add-thread-container{
+    width:125%;
+    margin:0;
+  }
+  .uc-modal-content {
+    width: 95%;
+    margin-top: 50px;
+    max-width: 420px;
+    padding: 22px;
+    max-height: 85vh;
+    border-radius: 8px;
+  }
+
+  .uc-modal-header {
+    margin-top: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 1rem;
+  }
+
+  .uc-modal-close {
+    top: 8px;
+    right: 8px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .uc-modal-content {
+    padding: 16px;
+    max-height: 88vh;
+  }
+
+  .uc-modal-header {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+}

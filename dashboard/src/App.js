@@ -70,6 +70,12 @@ function App() {
   // };
 
   const RequireAuth = ({ children, requiredRole }) => {
+    const { sessionExpired } = useContext(AuthContext); // Add this line
+
+  // Check session expiration first
+  if (sessionExpired) {
+    return <Navigate to="/login" />;
+  }
     if (currentUser ) {
       if(userRole === requiredRole){return children}
       else if (userRole !== requiredRole){

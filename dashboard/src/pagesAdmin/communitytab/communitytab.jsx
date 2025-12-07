@@ -205,7 +205,7 @@ function CommunitytabAdmin() {
 </div>
               </div>
             ) : ( 
-      <div style={{width:"800px"}}>
+      <div style={{width:"100%"}}>
         <div className="numbers">{cardData.title2}</div>
         <div className="cardName">{cardData.info2}</div>
       </div>)}
@@ -256,7 +256,7 @@ function CommunitytabAdmin() {
 </div>
               </div>
             ) : ( 
-            <div style={{width:"800px"}}>
+            <div style={{width:"100%"}}>
               <div className="numbers">{cardData.title3}</div>
               <div className="cardName">
               {cardData.info3}              </div>

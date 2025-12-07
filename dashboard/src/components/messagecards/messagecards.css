@@ -10,7 +10,7 @@
 }
 
 .threads-container {
-  width: 540px;
+  width: 500px;
   border-radius: 5px;
   margin: 10px auto;
 
@@ -116,4 +116,13 @@ hr{
   height: 600px;
   object-fit: contain; /* Ensure the image fits inside the modal */
   background-color: black;
+}
+@media (max-width: 408px) {
+  .threads-container {
+    width: 300px;
+    padding: 10px;
+  }
+  .comment-input{
+    width: 250px;
+  }
 }

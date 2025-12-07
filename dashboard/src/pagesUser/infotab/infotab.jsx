@@ -6,10 +6,10 @@ import { auth, db } from "../../firebase";
 import {  doc, getDoc, getDocs, collection, where } from "firebase/firestore";
 import NotificationModal from '../../userComponents/notifmod';
 
-function NavigationItem({ icon, title, to }) {
+function NavigationItem({ icon, title, to, onClick }) {
   return (
     <li>
-     <Link to={to} className='linking'>
+     <Link to={to} className='linking'onClick={onClick}>
         <span className="icon">
           <ion-icon name={icon}></ion-icon>
         </span>
@@ -19,6 +19,7 @@ function NavigationItem({ icon, title, to }) {
   );
 }
 export { NavigationItem };
+
 
 const GetCurrentUserId = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -50,7 +51,12 @@ function Infotab() {
   const [cardData1, setCardData1] = useState(null); // Initialize cardData with null
   const [userData, setUserData] = useState(null);
 
-
+const handleLinkClick = () => {
+    // Check if the current view is mobile/tablet size (e.g., < 992px)
+    if (window.innerWidth <= 991) {
+      setIsNavActive(false);
+    }
+  };
   
   useEffect(() => {
     const fetchCardData = async () => {
@@ -135,12 +141,12 @@ function Infotab() {
          </div>
        </div>
         )} 
-          <NavigationItem to="/infotab" icon="information-circle" title="Info" />
-          <NavigationItem to="/inspotab" icon="star" title="Inspo" />
-          <NavigationItem to="/communitytab"icon="chatbubbles" title="Community" />
-          <NavigationItem to="/scheduletab"icon="calendar" title="Schedule" />
-          <NavigationItem to="/apptab" icon="rocket" title="App" />
-          <NavigationItem to="/settingstab"icon="settings" title="Settings" />
+          <NavigationItem to="/infotab" icon="information-circle" title="Info"onClick={handleLinkClick} />
+          <NavigationItem to="/inspotab" icon="star" title="Inspo" onClick={handleLinkClick}/>
+          <NavigationItem to="/communitytab"icon="chatbubbles" title="Community"onClick={handleLinkClick} />
+          <NavigationItem to="/scheduletab"icon="calendar" title="Schedule"onClick={handleLinkClick} />
+          <NavigationItem to="/apptab" icon="rocket" title="App"onClick={handleLinkClick} />
+          <NavigationItem to="/settingstab"icon="settings" title="Settings" onClick={handleLinkClick}/>
           
 
         </ul>

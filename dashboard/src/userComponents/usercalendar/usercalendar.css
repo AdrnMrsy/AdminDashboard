@@ -27,7 +27,87 @@
     --fc-today-bg-color: rgba(255, 220, 40, .15);
     --fc-now-indicator-color: red;
 }
+@media (max-width: 600px) {
+  .MuiBox-root .css-1l4w6pd{
+    display: contents;
+    
+    margin:0px
+  }
+  .MuiBox-root .css-r5tuwy{
+        width: 250px;
+margin: 0px;
+margin-top: 10px;
 
+  }
+  .MuiBox-root .css-10xebh{
+    margin:0px;
+    width:250px;
+    align-items: center;
+  }
+  .MuiBox-root .css-o78ecg{
+    margin:0px;
+  }
+  .fc-header-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .fc-toolbar-chunk {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+
+    .fc-list-event-time,
+  .fc-list-event-graphic {
+    display: none;
+  }
+
+  .fc-list-event-title {
+    width: 100%;
+    display: block;
+  }
+  .fc-header-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .fc-toolbar-chunk {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .fc-button-group {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+.fc-list-table {
+  width: 100%;
+  table-layout: auto; /* let columns adapt */
+}
+
+.fc-list-event-time,
+.fc-list-event-title {
+  white-space: normal; /* allow wrapping */
+  word-break: break-word;
+}
+
+.fc-dayGridMonth-view {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* allow scroll if grid is too wide */
+}
+.fc-daygrid-day {
+  min-width: 80px;   /* prevent cells from collapsing too small */
+  word-wrap: break-word;
+  white-space: normal;
+}
 
 .schedule-list {
     width: 100%; /* Adjust width as needed */

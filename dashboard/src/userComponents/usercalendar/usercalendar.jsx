@@ -56,17 +56,26 @@ const UserCalendar = () => {
   const [selectedSchedule, setSelectedSchedule] = useState("approved");
   const [selectedTime, setSelectedTime] = useState(null);
 
-  //const [modalOpendelete, setModalOpendelete] = useState(false);
+  const [calendarView, setCalendarView] = useState(
+  window.innerWidth < 600 ? "listMonth" : "dayGridMonth"
+);
+const [calendarToolbar, setCalendarToolbar] = useState(getToolbar(window.innerWidth));
+const [calendarAspect, setCalendarAspect] = useState(getAspect(window.innerWidth));
 
-  // const openDeleteModal = (event) => {
-  //   setSelectedEventForDeletion(event);
-  //   setModalOpendelete(true);
-  // };
-
-  // const handleCloseModaldelete = () => {
-  //   setSelectedEventForDeletion(null);
-  //   setModalOpendelete(false);
-  // };
+function getToolbar(width) {
+  if (width < 600) {
+    return { left: "prev,next", center: "title", right: "" }; // very small: hide view buttons
+  }
+  if (width < 992) {
+    return { left: "prev,next today", center: "title", right: "timeGridWeek,listMonth" };
+  }
+  return { left: "prev,next today", center: "title", right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth" };
+}
+function getAspect(width) {
+  if (width < 600) return 0.9;
+  if (width < 992) return 1.1;
+  return 1.35;
+}
   
   const handleCloseSuccessModal = () => {
     setSuccessModalOpen(false);
@@ -156,7 +165,29 @@ const filterEventsByOption = () => {
     setSelectedOption(event.target.value);
   };
   
+useEffect(() => {
+  const handleResize = () => {
+    const w = window.innerWidth;
+    const newView = w < 600 ? "listMonth" : "dayGridMonth";
+    setCalendarView(newView);
+    setCalendarToolbar(getToolbar(w));
+    setCalendarAspect(getAspect(w));
 
+    // If calendarRef is mounted, change its view immediately
+    if (calendarRef.current) {
+      const api = calendarRef.current.getApi();
+      api.changeView(newView);
+      // optionally force re-render grid height
+      api.updateSize();
+    }
+  };
+
+  // run once to set initial sizes
+  handleResize();
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []); // run once on mount
 
   useEffect(() => {
     const fetchCounselors = async () => {
@@ -480,10 +511,10 @@ const filterEventsByOption = () => {
       <Box display="flex"  >
         
         <Box m="2px" flex="6" marginTop="51px" >
-          <Box display="flex" justifyContent="space-between" margin="25px" border= "solid 2px #d0d0d0" borderRadius= "10px" backgroundColor="white">
+          <Box display="flex" justifyContent="space-between" margin="5px" border= "solid 2px #d0d0d0" borderRadius= "10px" backgroundColor="white">
 
             {/* CALENDAR */}
-            <Box flex="1 1 100%" padding="35px">
+            <Box flex="1 1 100%" padding="15px">
             {alertMessage && <div className="alert">{alertMessage}</div>}
 
               <FullCalendar

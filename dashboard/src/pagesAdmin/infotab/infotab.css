@@ -51,7 +51,25 @@ body {
   border-bottom-left-radius: 30px;
   
 }
+/* CTA in card: bigger and bold, responsive */
+.card-cta {
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem); /* scales between 1.1rem and 1.6rem */
+  color: #F9F8F6;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  background:#BA5255;
 
+}
+
+/* Optional: add spacing and pointer cursor */
+.card .card-cta {
+  margin-top: 10px;
+  padding:15px;
+  align-self: center;
+  cursor: pointer;
+  border-radius: 15px;
+}
 /* .navigation ul li:hover,
 .navigation ul li.hovered {
   background-color:var(--peach);
@@ -322,7 +340,7 @@ body {
   justify-content: space-between;
   cursor: pointer;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  width: 313px;
+  width: 200%;
   border: none;
 }
 
@@ -768,4 +786,47 @@ width: 80px; /* Adjust the width as needed */
         margin-top: 10px;
         width: 100%;
       }
-      
+.pic{
+  width: 400px;
+} 
+/* ============ Responsive Design ============ */
+@media (max-width: 768px) {
+  .main.active {
+  width: calc(100%);
+  left: 0;
+  height:auto;
+}
+.pic{
+  width:200px;
+  
+}
+.scrollable-container{
+  overflow-x: hidden;
+  align-items: center;
+}
+.topbar {
+  position: fixed;
+  z-index: 1001;
+}
+.cardBoxS{
+  padding: 0px;
+  gap: 12px;
+}
+  .cardBoxS .card {
+        width: 100%;
+        display: table;
+        flex: 0 0 auto;
+    }
+.cardBoxS .card .iconBx {
+    font-size: 5.0rem;
+    margin-left: 70px;
+    margin-top: 10px;
+    color: var(--pink2);
+}
+.cardedit input,.cardedit textarea {
+  width: 250px;
+}
+.video-player video{
+  width: 250px;
+}
+}

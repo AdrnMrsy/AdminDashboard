@@ -112,6 +112,7 @@ function Communitytab() {
           <div className="card" onClick={toggleUserChat}> {/* Add onClick handler to toggle UserChats visibility */}
             <div>
               <div className="numbers">{cardData.title1}</div>
+              <div className='card-cta'>CLICK HERE TO OPEN</div>
               <div className="cardName">
               {cardData.info1}
               </div>
@@ -120,6 +121,7 @@ function Communitytab() {
             
           </div>
         )}
+        
         </div>
 
 
@@ -127,7 +129,7 @@ function Communitytab() {
         <div className="cardBox">
   {cardData && (
     <div className="card ">
-      <div style={{width:"800px"}}>
+      <div style={{width:"100%"}}>
         <div className="numbers">{cardData.title2}</div>
         <div className="cardName">{cardData.info2}</div>
       </div>
@@ -160,7 +162,7 @@ function Communitytab() {
         <div className="cardBox">
         {cardData && (
           <div className="card">
-            <div style={{width:"800px"}}>
+            <div style={{width:"100%"}}>
               <div className="numbers">{cardData.title3}</div>
               <div className="cardName">
               {cardData.info3}              </div>
